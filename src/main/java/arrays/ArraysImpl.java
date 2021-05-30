@@ -49,12 +49,12 @@ public class ArraysImpl implements Array {
 
     public boolean deleteElementAtGivenPos(int pos) {
 
-        if (pos<=0 || pos>a.length) {
+        if (pos<=0 || pos>size) {
             return false;
         }
 
-        for(int i=size-1;i>=pos-1;i--) {
-            a[i-1] = a[i];
+        for(int i=pos-1;i<size;i++) {
+            a[i] = a[i+1];
         }
         size--;
         return true;
